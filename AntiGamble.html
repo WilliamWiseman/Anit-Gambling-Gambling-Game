@@ -1,1 +1,50 @@
-This is where the code is gonna be
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Anti Gambling software</title>
+</head>
+
+<body>
+
+<div id="into">
+    <h1>WELCOME TO THE</h1>
+    <p>Anti Gambling Gambling Game</p>
+    <button onclick="begin()">PLAY</button>
+</div>
+
+<div id="body" style="display:none">
+	<h1>ANTI GAMBLING GAMBLING GAME</h1>
+	<p>Click below to play a lotto ticket!</p>
+	<button onclick="scam()">BUY!</button>
+	<p>When you win, the screen will automatically change.</p>
+	<p id="this is a test, not perm"></p>
+	<p id="message" style="display:none">You didn't win. #<span 		id="lost">1</span></p>
+</div>
+
+<style>
+body{
+	text-align:center;
+	font-weight: bolder;
+}
+</style>
+
+<script>
+	let totalSpent = null;
+	let ticketsPlayed = 0;
+	let actuallyWon = false;
+	let totalLost = null;
+	let ticketPrice = 5;
+	let play = null;
+function begin(){
+	document.getElementById('intro').style.display = "none";
+	document.getElementById('body').style.display = "block";
+}
+function scam(){
+	play = Math.floor(Math.random() * 4000);
+	doc("this is a test, not perm").innerHTML = play;
+}
+</script>
+
+</body>
+</html>
