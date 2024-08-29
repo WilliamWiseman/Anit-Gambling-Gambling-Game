@@ -49,16 +49,23 @@ function scam(){
 		win();
 	return;
 	}
-	totalLost++;
 	if(message == false){
 	document.getElementById('message').style.display = "block";
     message = true;
     return;
 	}
 	else if(message == true){
-	document.getElementById('msgNum').innnerHTML = totalLost;
+	msgUpd();
 	}
 }
+function msgUpd(){
+//nothing here yet
+}
+
+function win(){
+//nothing here yet
+}
+
 
 </script>
 
