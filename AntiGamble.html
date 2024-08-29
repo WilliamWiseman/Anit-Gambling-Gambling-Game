@@ -19,7 +19,7 @@
 	<button onclick="scam()">BUY!</button>
 	<p>When you win, the screen will automatically change.</p>
 	<p id="test"></p>
-	<p id="message" style="display:none">You didn't win. #<span id="lost">1</span></p>
+	<p id="message" style="display:none">You didn't win. #<span id="msgNum">1</span></p>
 </div>
 
 <style>
@@ -56,7 +56,7 @@ function scam(){
     return;
 	}
 	else if(message == true){
-	document.getElementById('lost').innnerHTML = totalLost;
+	document.getElementById('msgNum').innnerHTML = totalLost;
 	}
 }
 
