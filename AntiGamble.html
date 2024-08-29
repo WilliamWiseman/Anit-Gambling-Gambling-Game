@@ -30,12 +30,12 @@ body{
 </style>
 
 <script>
-	let totalSpent = null;
+	let totalSpent = 0;
 	let ticketsPlayed = 0;
 	let actuallyWon = false;
-	let totalLost = null;
-	let ticketPrice = 5;
+	let totalLost = 0;
 	let play = null;
+	let message = false;
 function begin(){
 	document.getElementById('intro').style.display = "none";
 	document.getElementById('body').style.display = "block";
@@ -43,7 +43,21 @@ function begin(){
 function scam(){
 	play = Math.floor(Math.random() * 4000);
 	document.getElementById("test").innerHTML = play;
+	ticketsPlayed++;
+	totalSpent += 5;
+	if(play == 2776){
+		win();
+	return;
+	}
+	totalLost++;
+	if(message == false){
+	document.getElementById('message').style.display = "block";
+	}
+	else if(message == true){
+	document.getElementById('lost').innnerHTML = totalLost;
+	}
 }
+
 </script>
 
 </body>
