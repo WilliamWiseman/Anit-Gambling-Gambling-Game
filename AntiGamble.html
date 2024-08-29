@@ -52,6 +52,8 @@ function scam(){
 	totalLost++;
 	if(message == false){
 	document.getElementById('message').style.display = "block";
+    message = true;
+    return;
 	}
 	else if(message == true){
 	document.getElementById('lost').innnerHTML = totalLost;
