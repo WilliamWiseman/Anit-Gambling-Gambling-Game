@@ -57,9 +57,10 @@ function scam(){
 	}
 	msgUpd();
 }
+let times = 0;
 function msgUpd(){
-
-document.getElementById('msgNum').innerHTML = 2;
+times+= 1;
+document.getElementById('msgNum').innerHTML = times;
 }
 
 function win(){
