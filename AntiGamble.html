@@ -18,7 +18,7 @@
 	<p>Click below to play a lotto ticket!</p>
 	<button onclick="scam()">BUY!</button>
 	<p>When you win, the screen will automatically change.</p>
-	<p id="this is a test, not perm"></p>
+	<p id="test"></p>
 	<p id="message" style="display:none">You didn't win. #<span 		id="lost">1</span></p>
 </div>
 
@@ -42,7 +42,7 @@ function begin(){
 }
 function scam(){
 	play = Math.floor(Math.random() * 4000);
-	doc("this is a test, not perm").innerHTML = play;
+	doc("test").innerHTML = play;
 }
 </script>
 
