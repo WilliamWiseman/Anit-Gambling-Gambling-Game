@@ -17,7 +17,16 @@
 <h1> This is the choice screen.</h1>
 <p>Here's how this works. To make this go faster, the easier options have a higher chance of winning, however the price of the ticket goes up.</p>
 <br><br>
-<button onclick="trueBegin()">Skip cuz this no work yet</button>
+<p>Baby mode. 10 times easier than easy mode. Lotto tickets cost even more.</p>
+<button onclick="pickChances(100, 45, 200, 'baby')">Play baby</button>
+<p>Easy mode. 4 times easier than normal, but also 4 times more expensive tickets.</p>
+<button onclick="pickChances(1000, 436, 20, 'easy')"></button>
+<br>
+<p>Normal mode. 0.025% chance to win. Normal ticket cost.</p>
+<button onclick="trueBegin()">Play normal</button>
+<br>
+<p>Normal lottery chances. You won't win.</p>
+<button onclick="pickChances(300000000, 4358, 5, 'realLotto')">Play impossible</button>
 
 </div>
 
@@ -84,10 +93,12 @@ function trueBegin(){
 	document.getElementById('choice').style.display = "none";
 	document.getElementById('body').style.display = "block";
 }
-function pickChances(pickChance, pickNum, pickCost){
+let difficulty = "normal";
+function pickChances(pickChance, pickNum, pickCost, difPick){
 	chance = pickChance;
 	winningNum = pickNum;
 	ticketCost = pickCost;
+	difficulty = difPick;
 	trueBegin();
 }
 </script>
