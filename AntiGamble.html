@@ -45,6 +45,9 @@ body{
 	let totalLost = 0;
 	let play = null;
 	let message = false;
+	let chance = 4000;
+	let winningNum = 2776;
+	let ticketCost = 5;
 function begin(){
 	document.getElementById('intro').style.display = "none";
 	document.getElementById('choice').style.display = "block";
@@ -52,12 +55,12 @@ function begin(){
 function pick(){
 document.body.style = "display:block";
 }
-function scam(chance, winningNum){
-	play = Math.floor(Math.random() * 4000);
+function scam(){
+	play = Math.floor(Math.random() * chance);
 	document.getElementById("test").innerHTML = play;
 	ticketsPlayed++;
-	totalSpent += 5;
-	if(play == 2776){
+	totalSpent += ticketCost;
+	if(play == winningNum){
 		win();
 	return;
 	}
@@ -80,6 +83,12 @@ function win(){
 function trueBegin(){
 	document.getElementById('choice').style.display = "none";
 	document.getElementById('body').style.display = "block";
+}
+function pickChances(pickChance, pickNum, pickCost){
+	chance = pickChance;
+	winningNum = pickNum;
+	ticketCost = pickCost;
+	trueBegin();
 }
 </script>
 </body>
