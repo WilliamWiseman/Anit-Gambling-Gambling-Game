@@ -13,6 +13,14 @@
     <button onclick="begin()">PLAY</button>
 </div>
 
+<div id="choice" style="display:none;">
+<h1> This is the choice screen.</h1>
+<p>Here's how this works. To make this go faster, the easier options have a higher chance of winning, however the price of the ticket goes up.</p>
+<br><br>
+<button onclick="trueBegin()">Skip cuz this no work yet</button>
+
+</div>
+
 <div id="body" style="display:none">
 	<h1>ANTI GAMBLING GAMBLING GAME</h1>
 	<p>Click below to play a lotto ticket!</p>
@@ -39,9 +47,12 @@ body{
 	let message = false;
 function begin(){
 	document.getElementById('intro').style.display = "none";
-	document.getElementById('body').style.display = "block";
+	document.getElementById('choice').style.display = "block";
 }
-function scam(){
+function pick(){
+document.body.style = "display:block";
+}
+function scam(chance, winningNum){
 	play = Math.floor(Math.random() * 4000);
 	document.getElementById("test").innerHTML = play;
 	ticketsPlayed++;
@@ -59,12 +70,16 @@ function scam(){
 }
 let times = 0;
 function msgUpd(){
-times+= 1;
-document.getElementById('msgNum').innerHTML = times;
+	times+= 1;
+	document.getElementById('msgNum').innerHTML = times;
 }
 
 function win(){
-document.getElementById('wintest').innerHTML = "you win"
+	document.getElementById('wintest').innerHTML = "you win"
+}
+function trueBegin(){
+	document.getElementById('choice').style.display = "none";
+	document.getElementById('body').style.display = "block";
 }
 </script>
 </body>
