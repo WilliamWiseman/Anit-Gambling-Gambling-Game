@@ -16,17 +16,17 @@
 <div id="choice" style="display:none;">
 <h1> This is the choice screen.</h1>
 <p>Here's how this works. To make this go faster, the easier options have a higher chance of winning, however the price of the ticket goes up.</p>
-<br><br>
+<br>
 <p>Baby mode. 10 times easier than easy mode. Lotto tickets cost even more.</p>
-<button onclick="pickChances(100, 45, 200, 'baby')">Play baby</button>
+<button onclick="pickChances(100, 45, 200, 'baby')">Play baby mode</button>
 <p>Easy mode. 4 times easier than normal, but also 4 times more expensive tickets.</p>
-<button onclick="pickChances(1000, 436, 20, 'easy')"></button>
+<button onclick="pickChances(1000, 436, 20, 'easy')">Play easy mode</button>
 <br>
 <p>Normal mode. 0.025% chance to win. Normal ticket cost.</p>
-<button onclick="trueBegin()">Play normal</button>
+<button onclick="trueBegin()">Play normal mode</button>
 <br>
 <p>Normal lottery chances. You won't win.</p>
-<button onclick="pickChances(300000000, 4358, 5, 'realLotto')">Play impossible</button>
+<button onclick="pickChances(300000000, 4358, 5, 'realLotto')">Play impossible mode</button>
 
 </div>
 
@@ -37,7 +37,17 @@
 	<p>When you win, the screen will automatically change.</p>
 	<p id="test"></p>
 	<p id="message" style="display:none">You didn't win. #<span id="msgNum">1</span></p>
-    <p id="wintest"></p>
+</div>
+
+<div id="winScreen">
+<h1>YOU WON! but...</h1>
+<p id="diffDisp"></p>
+<p>You only won 10,000 dollars.</p>
+<p>You spent: <span id="spentDisp">0</span>$ trying to get it.</p>
+<p>In total, you lost <span id="lostDisp">0</span> dollars in the process.</p>
+<p>You bought <span id="ticketDisp">0</span> lottery tickets.</p>
+<p>So yeah, you lost a LOT of money. How are you gonna get it back? Maybe, just maybe, another lottery ticket?</p>
+
 </div>
 
 <style>
@@ -80,20 +90,26 @@ function scam(){
 	}
 	msgUpd();
 }
-let times = 0;
+	let times = 1;
 function msgUpd(){
 	times+= 1;
 	document.getElementById('msgNum').innerHTML = times;
 }
-
 function win(){
-	document.getElementById('wintest').innerHTML = "you win"
+	document.getElementById('winScreen').style.display = "block";
+	document.getElementById('body').style.display = "none";
+	document.getElementById('spentDisp').innerHTML = totalSpent;
+	totalLost = totalSpent;
+	totalLost-= 10000;
+	document.getElementById('lostDisp').innerHTML = totalLost;
+	document.getElementById('diffDisp').innerHTML = difficulty;
+	document.getElementById('ticketDisp').innerHTML = ticketsPlayed;
 }
 function trueBegin(){
 	document.getElementById('choice').style.display = "none";
 	document.getElementById('body').style.display = "block";
 }
-let difficulty = "normal";
+	let difficulty = "normal";
 function pickChances(pickChance, pickNum, pickCost, difPick){
 	chance = pickChance;
 	winningNum = pickNum;
